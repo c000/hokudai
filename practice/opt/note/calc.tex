@@ -1,0 +1,79 @@
+\documentclass{jarticle}
+\usepackage{amsmath,amssymb}
+\begin{document}
+共振器の光エネルギーの立ち上がり，
+利得媒質の反転分布の立ち上がりに
+時間的ずれがあるため，過渡的な振動減少が生じる。
+これが緩和発信。
+
+\begin{align*}
+	N_1' &= R - \frac{1 + B t_c N_1}{B t_c \tau}
+		- \frac{R B t_c \tau - 1}{B t_c \tau}
+		- \frac{\rho_1}{t_c}
+		- \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= R - \frac{B t_c N_1 + R B t_c \tau}{B t_c \tau}
+		- \frac{\rho_1}{t_c}
+		- \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= R - \frac{N_1 + R \tau}{\tau}
+		- \frac{\rho_1}{t_c}
+		- \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= - \frac{N_1}{\tau}
+		- \frac{\rho_1}{t_c}
+		- \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= - \frac{R B t_c \tau}{\tau} N_1
+		- \frac{\rho_1}{t_c} \\
+	&= - R B t_c N_1
+		- \frac{\rho_1}{t_c} \\
+	\rho_1' &= - \frac{\frac{R B t_c \tau -1}{B \tau} + \rho_1}{t_c}
+		+ \frac{R B t_c \tau - 1}{B t_c \tau}
+		+ \frac{\rho_1}{t_c}
+		+ \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= - \frac{R B t_c \tau -1 + B \tau \rho_1}{B t_c \tau}
+		+ \frac{R B t_c \tau - 1}{B t_c \tau}
+		+ \frac{\rho_1}{t_c}
+		+ \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= - \frac{B \tau \rho_1}{B t_c \tau}
+		+ \frac{\rho_1}{t_c}
+		+ \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= - \frac{\rho_1}{t_c}
+		+ \frac{\rho_1}{t_c}
+		+ \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	&= \frac{R B t_c \tau - 1}{\tau} N_1 \\
+	N_1 &= \frac{\tau}{R B t_c \tau - 1} \rho_1'
+\end{align*}
+\begin{align*}
+	\rho_1'' &= \frac{R B t_c \tau - 1}{\tau} N_1'
+	\Longleftrightarrow
+	N_1' = \frac{\tau}{R B t_c \tau - 1} \rho_1'' \\
+	\frac{\tau}{R B t_c \tau - 1} \rho_1''
+		&= - R B t_c N_1 - \frac{\rho_1}{t_c} \\
+	\frac{\tau}{R B t_c \tau - 1} \rho_1''
+		&= - R B t_c \frac{\tau}{R B t_c \tau - 1} \rho_1'
+		- \frac{\rho_1}{t_c} \\
+	\frac{\tau}{r - 1} \rho_1''
+		&= - \frac{r}{r - 1} \rho_1'
+		- \frac{\rho_1}{t_c} \\
+	0 &= \frac{\tau}{r - 1} \rho_1''
+		+ \frac{r}{r - 1} \rho_1'
+		+ \frac{\rho_1}{t_c}
+	\intertext{$\rho = Ae^{pt}$ とすると}
+	0 &= \frac{\tau}{r - 1} A p^2 e^{pt}
+		+ \frac{r}{r - 1} A p e^{pt}
+		+ \frac{1}{t_c} A e^{pt} \\
+	0 &= \frac{\tau}{r - 1} p^2
+		+ \frac{r}{r - 1} p
+		+ \frac{1}{t_c} \\
+	0 &= p^2
+		+ \frac{r}{\tau} p
+		+ \frac{r-1}{t_c \tau } \\
+	p &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+	&= \frac{-\frac{r}{\tau}
+		\pm \sqrt{\frac{r^2}{\tau^2} - 4 \frac{r-1}{t_c \tau}}}
+		{2} \\
+	&= -\frac{r}{2\tau}
+		\pm \sqrt{\left( \frac{r}{2\tau} \right)^2
+			- \frac{r-1}{t_c \tau}}
+	\intertext{$\frac{r-1}{t_c \tau} \gg \left( \frac{r}{2\tau} \right)^2$}
+	p &= - \frac{r}{2 \tau} \pm i \sqrt{\frac{r-1}{t_c \tau}}
+\end{align*}
+\end{document}
